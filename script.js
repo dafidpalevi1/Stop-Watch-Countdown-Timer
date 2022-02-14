@@ -1,8 +1,8 @@
 var mode = "stopwatch";
 
-var hr = 0;
-var min = 0;
-var sec = 0;
+var hr = 00;
+var min = 00;
+var sec = 00;
 var stoptime = true;
 
 var timer = document.getElementById("stopwatch");
@@ -58,9 +58,9 @@ btnStop.addEventListener("click", () => {
 });
 
 btnReset.addEventListener("click", () => {
-  hr = 0;
-  min = 0;
-  sec = 0;
+  hr = 00;
+  min = 00;
+  sec = 00;
   stoptime = true;
 
   timer.innerHTML = `00` + ":" + `00` + ":" + `00`;
@@ -93,25 +93,25 @@ function timerCycle() {
     sec = sec + 1;
     if (sec == 60) {
       min = min + 1;
-      sec = 0;
+      sec = 00;
     }
 
     if (min == 60) {
       hr = hr + 1;
-      min = 0;
-      sec = 0;
+      min = 00;
+      sec = 00;
     }
 
-    if (sec < 10 || sec == 0) {
-      sec = "0" + sec;
+    if (sec < 10 || sec == 00) {
+      sec = "00" + sec;
     }
 
-    if (min < 10 || min == 0) {
-      min = "0" + min;
+    if (min < 10 || min == 00) {
+      min = "00" + min;
     }
 
-    if (hr < 10 || hr == 0) {
-      hr = "0" + hr;
+    if (hr < 10 || hr == 00) {
+      hr = "00" + hr;
     }
 
     timer.innerHTML = hr + ":" + min + ":" + sec;
@@ -126,12 +126,12 @@ function timerCountDown() {
     min = parseInt(min);
     hr = parseInt(hr);
 
-    if (sec > 0) {
+    if (sec > 00) {
       sec = sec - 1;
-    } else if (min > 0) {
+    } else if (min > 00) {
       min = min - 1;
       sec = 60;
-    } else if (hr > 0) {
+    } else if (hr > 00) {
       hr = hr - 1;
       min = 59;
       sec = 60;
